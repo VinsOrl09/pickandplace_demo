@@ -28,7 +28,7 @@ sudo apt install ros-${ROS_DISTRO}-cv-bridge \
 
 ```bash
 cd ~/ros2_ws/src
-git clone <your-repo-url> edge_detection
+git clone <your-repo-url>
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
