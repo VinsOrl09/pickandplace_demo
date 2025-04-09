@@ -9,7 +9,7 @@ from visualization_msgs.msg import Marker, MarkerArray
 import tf2_ros
 import tf2_geometry_msgs
 
-class EdgeDetectorNode(Node):
+class EdgeDetectionNode(Node):
     def __init__(self):
         super().__init__('edge_detector')
         self.bridge = CvBridge()
