@@ -1,25 +1,53 @@
 # Pick and Place Demo
 
-## Edge detection approach
+## 📦 Requirements
 
-### 1. Launch the RealSense Camera
+- ROS 2 Humble or later
+- Python 3.8+
+- RealSense camera (D435, D455, etc.)
+- Packages:
+  - `cv_bridge`
+  - `tf2_ros`
+  - `tf2_geometry_msgs`
+  - `sensor_msgs`, `geometry_msgs`, `visualization_msgs`
+
+Install any missing dependencies:
+
+```bash
+sudo apt install ros-${ROS_DISTRO}-cv-bridge \
+                 ros-${ROS_DISTRO}-tf2-ros \
+                 ros-${ROS_DISTRO}-tf2-geometry-msgs \
+                 ros-${ROS_DISTRO}-vision-msgs
+```
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone and Build
+
+```bash
+cd ~/ros2_ws/src
+git clone <your-repo-url> edge_detection
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+### 2. Launch the RealSense Camera
 
 ```bash
 ros2 launch realsense2_camera rs_launch.py
 ```
 
-Make sure it publishes:
-- `/camera/color/image_raw`
-- `/camera/depth/image_rect_raw`
-- TF frames (e.g., `camera_link`, `camera_color_optical_frame`)
 
-### 2. Run the Shape Detection Node
+### 3. Run the Shape Detection Node
 
 ```bash
-ros2 run package_name sedge_detection_node
+ros2 run shape_detector shape_detector_node
 ```
 
-### 3. (Optional) Publish Static Transform
+### 4. (Optional) Publish Static Transform
 
 If your camera is rigidly mounted on a robot:
 
@@ -33,7 +61,7 @@ Replace translation/rotation as needed.
 
 ---
 
-### 4. 📊 Visualize in RViz2
+### 5. 📊 Visualize in RViz2
 
 ```bash
 rviz2
@@ -49,3 +77,4 @@ Add these displays:
 - **TF**: to visualize frames
 
 ---
+
