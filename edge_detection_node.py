@@ -6,10 +6,12 @@ from cv_bridge import CvBridge
 import cv2
 import numpy as np
 from visualization_msgs.msg import Marker, MarkerArray
+import tf2_ros
+import tf2_geometry_msgs
 
-class ShapeDetectorNode(Node):
+class EdgeDetectorNode(Node):
     def __init__(self):
-        super().__init__('shape_detector')
+        super().__init__('edge_detector')
         self.bridge = CvBridge()
 
         # Subscriptions

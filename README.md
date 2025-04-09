@@ -44,7 +44,7 @@ ros2 launch realsense2_camera rs_launch.py
 ### 3. Run the Shape Detection Node
 
 ```bash
-ros2 run shape_detector shape_detector_node
+ros2 run edge_detector edge_detection_node
 ```
 
 ### 4. (Optional) Publish Static Transform
